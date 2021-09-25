@@ -12,6 +12,7 @@ public class DiscordRP {
 	private boolean running = true;
 	private long created = 0;
 	
+	//Enter your project id here
 	private String CLIEND_ID = "";
 	
 	public void start() {
@@ -22,8 +23,9 @@ public class DiscordRP {
 			
 			@Override
 			public void apply(DiscordUser user) {
-				System.out.println("Willkommen " + user.username + "#" + user.discriminator + ".");
+				System.out.println("Welcome " + user.username + "#" + user.discriminator + ".");
 				update("Loading DiscordRPC...", " Client by Sqizyyyy");
+				//Startig Message
 			}
 			
 		}).build();
@@ -40,14 +42,14 @@ public class DiscordRP {
 		
 		
 	}
-	
+	//On Shutdown
 	public void shutdown() {
 		running = false;
 		DiscordRPC.discordShutdown();
 		
 		
 	}
-	
+	//On Update
 	public void update(String firstLine, String secondLine) {
 		DiscordRichPresence.Builder b = new DiscordRichPresence.Builder(secondLine);
 		b.setBigImage("large", "");
